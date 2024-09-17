@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Price Prediction Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#predictions">Price Prediction</a></li>
+                <li><a href="#analysis">Market Analysis</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>Crop Price Prediction Dashboard</h1>
+    </header>
+
+    <section class="intro">
+        <div class="intro-text">
+            <p>The Department of Consumer Affairs monitors daily prices of 22 essential food commodities through 550 price reporting centers across the country. Strategic market interventions stabilize price volatility using buffer stocks of pulses (gram, tur, urad, moon, masur) and onion.</p>
+            <p>Price trends are analyzed based on seasonality, historical and emerging trends, market intelligence, and production estimates. ARIMA-based economic models are also employed for forecasting prices.</p>
+        </div>
+        <div class="pie-chart-container">
+            <canvas id="cropPieChart"></canvas>
+        </div>
+    </section>
+
+    <section id="predictions" class="prediction-container">
+        <h2>Predict Crop Prices</h2>
+        <form id="crop-form">
+            <label for="crop-select">Select Crop:</label>
+            <select id="crop-select" name="crop-select">
+                <option value="gram">Gram</option>
+                <option value="tur">Tur</option>
+                <option value="urad">Urad</option>
+                <option value="moon">Moong</option>
+                <option value="masur">Masur</option>
+                <option value="onion">Onion</option>
+                <option value="potato">Potato</option>
+            </select>
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date">
+            <button type="submit">Predict Price</button>
+        </form>
+        <div id="prediction-output">
+            <p>Predicted Price: <span id="predicted-price">--</span></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Department of Consumer Affairs | Crop Price Monitoring & Forecasting</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
